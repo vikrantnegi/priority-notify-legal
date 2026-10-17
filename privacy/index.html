@@ -14,13 +14,13 @@
 <main>
   <a class="brand" href="../"><span class="bars"><i></i><i></i><i></i><i></i></span>Priority Notify</a>
 
-  <p class="kicker">Privacy policy · effective 7 October 2026</p>
+  <p class="kicker">Privacy policy · effective 17 October 2026</p>
   <h1>What we keep, and why.</h1>
   <p class="lede">Priority Notify lets you send short alerts to people who have accepted you, at a level they chose. It is built to know as little about you as it can and still deliver an alert.</p>
 
   <div class="card">
     <strong>In short</strong>
-    <p>No email, phone number, location, contacts or ads. We store your handle, the people you connect with and the messages between you (deleted after 30 days), plus what your phone needs to receive alerts. You can delete all of it from the app at any time.</p>
+    <p>No email, phone number, location, contacts or ads. We store your handle, the people you connect with and the messages between you (deleted after 30 days), plus what your phone needs to receive alerts, and crash reports so we can fix bugs. You can delete all of it from the app at any time.</p>
   </div>
 
   <h2>Who we are</h2>
@@ -31,6 +31,7 @@
     <li><strong>Your account:</strong> the handle and display name you choose, and an account identifier created when you first open the app. We never ask for an email address or phone number.</li>
     <li><strong>Your connections:</strong> who you are connected to, in which direction, the loudest level each person allows, quiet hours, whether Urgent may ring on silent, and blocks. Invite codes you share, which expire after 7 days.</li>
     <li><strong>Messages:</strong> the text you send or receive, its level, and when it was sent, delivered, opened and acknowledged, plus a record of each delivery attempt. Messages are <strong>deleted automatically after 30 days</strong>.</li>
+    <li><strong>Crash reports:</strong> when the app crashes or hits an error, a report with the error, the screens and actions just before it, and device details (phone model, Android version, app version). Reports don't include your messages, your IP address or your device name.</li>
     <li><strong>Your phone, for delivery:</strong> a push-notification token; the app version, Android version and manufacturer; your time zone (so quiet hours follow your local time); and whether notifications are allowed, battery restrictions are on and the ringer is silent. We use these to deliver alerts and to warn you when something on your phone will stop them.</li>
   </ul>
 
@@ -43,18 +44,20 @@
   </ul>
 
   <h2>Why we use it</h2>
-  <p>Only to run the app: to create your account, connect you with people you approve, deliver alerts at the level they allow, show you whether they arrived, and help you fix settings that would block alerts. We do not use your data for analytics, marketing or profiling.</p>
+  <p>Only to run the app: to create your account, connect you with people you approve, deliver alerts at the level they allow, show you whether they arrived, and help you fix settings that would block alerts. Crash reports are used only to find and fix bugs. We do not use your data for marketing or profiling.</p>
 
   <h2>Who processes it</h2>
   <ul>
     <li><strong>Supabase</strong> hosts the database and runs our server functions.</li>
     <li><strong>Google Firebase Cloud Messaging</strong> carries the push message that wakes your phone. The message contains the sender's name, the text and the level.</li>
+    <li><strong>Sentry</strong> (Functional Software, Inc.) receives crash reports.</li>
   </ul>
-  <p>Both act as service providers on our behalf. All data travels encrypted (HTTPS). Data may be processed in countries other than your own.</p>
+  <p>All act as service providers on our behalf. All data travels encrypted (HTTPS). Data may be processed in countries other than your own.</p>
 
   <h2>How long we keep it</h2>
   <ul>
     <li>Messages and their delivery records: 30 days, then deleted automatically.</li>
+    <li>Crash reports: up to 90 days, then deleted by Sentry.</li>
     <li>Your account, connections and phone details: until you delete your account. A phone's push token is also removed when Google reports it is no longer valid.</li>
     <li>Our hosting provider's encrypted backups expire on their own schedule after deletion.</li>
   </ul>
